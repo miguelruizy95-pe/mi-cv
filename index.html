@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Miguel Angel Ruiz Yactayo</title>
+    <style>
+        /* Reset total para eliminar bordes y sombras fantasma */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            line-height: 1.4;
+            color: #444;
+            background-color: #f0f0f0; 
+            display: flex;
+            justify-content: center;
+            padding: 20px; /* Espaciado menor para móviles */
+        }
+
+        .resume-container {
+            background-color: white;
+            width: 100%; /* Ocupa todo el ancho en móviles */
+            max-width: 210mm; /* No supera el tamaño A4 en escritorio */
+            min-height: 297mm;
+            padding: 10mm; /* Padding reducido para móviles */
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        header {
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            color: #4A69BD;
+            font-size: clamp(24px, 6vw, 32px); /* Tamaño fluido según pantalla */
+            margin-bottom: 5px;
+        }
+
+        .job-title {
+            font-size: clamp(18px, 4vw, 20px);
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            font-size: 13px;
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.5;
+            word-wrap: break-word; /* Evita que el link rompa el diseño en móvil */
+        }
+
+        .summary {
+            font-size: 13px;
+            text-align: justify;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .section-title {
+            color: #4A69BD;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-bottom: 1px solid #eee; 
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            margin-top: 20px;
+        }
+
+        .experience-item {
+            margin-bottom: 20px;
+        }
+
+        .experience-header {
+            display: flex;
+            flex-wrap: wrap; /* Permite que la fecha baje en móviles */
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 5px;
+        }
+
+        .role-company {
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .company-info {
+            font-size: 14px;
+            color: #777;
+            font-weight: normal;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .dates {
+            font-size: 13px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .experience-summary {
+            font-size: 13px;
+            margin: 5px 0 8px 0;
+            color: #666;
+            font-style: italic;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            font-size: 13px;
+            margin-bottom: 4px;
+            color: #444;
+        }
+
+        li::marker {
+            color: #4A69BD;
+        }
+
+        .skills-container {
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .skills-container strong {
+            color: #333;
+        }
+
+        /* AJUSTES PARA PANTALLAS GRANDES */
+        @media (min-width: 768px) {
+            body { padding: 40px 0; }
+            .resume-container { padding: 20mm; }
+        }
+
+        /* CONFIGURACIÓN PARA EXPORTAR A PDF (FORZAR A4) */
+        @media print {
+            body { background: white; padding: 0; }
+            .resume-container {
+                width: 210mm !important; /* Forzamos ancho A4 exacto */
+                max-width: none;
+                padding: 15mm; 
+                box-shadow: none !important;
+            }
+            .experience-header { flex-wrap: nowrap; } /* Evita saltos de fecha en PDF */
+            @page { size: A4; margin: 0; }
+            * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="resume-container">
+    <header>
+        <h1>Miguel Angel Ruiz Yactayo</h1>
+        <div class="job-title">Analista de Sistemas</div>
+        <div class="contact-info">
+            980472979 • miguel.ruiz1695@gmail.com • mruizy@uni.pe • Calle San Agustín 147 - Santiago de Surco<br>
+            <a href="https://www.linkedin.com/in/miguel-angel-ruiz-yactayo-67b872171" target="_blank" style="color: inherit; text-decoration: none;">
+                www.linkedin.com/in/miguel-angel-ruiz-yactayo-67b872171
+            </a>
+        </div>
+        <div class="summary">
+            Analista de Sistemas con experiencia en la digitalización de procesos y la visualización de datos para la toma de decisiones. Experto en el desarrollo de dashboards en Power BI y la automatización de reportes con ETL y VBA. Buscando aplicar mis habilidades en análisis de datos para optimizar la toma de decisiones, identificar oportunidades de crecimiento y mejorar la eficiencia operativa a través de la interpretación de datos. Cuento con experiencia en el rubro de minería, petróleo, manufactura, etc.
+        </div>
+    </header>
+
+    <div class="section-title">Experiencia Laboral</div>
+
+    <div class="experience-item">
+        <div class="experience-header">
+            <span class="role-company">Analista de Sistemas</span>
+            <span class="dates">Septiembre de 2023 – Actualidad</span>
+        </div>
+        <span class="company-info">Sodexo, Operación Pluspetrol - Malvinas</span>
+        <div class="experience-summary">
+            Responsable de la digitalización de sistemas, logrando automatizar reportes manuales y aumentando así la productividad a través del desarrollo de dashboards, reportes customizados y macros.
+        </div>
+        <ul>
+            <li>Desarrollo de Dashboards interactivos en Power BI: Se logró tener un mejor entendimiento de los indicadores evaluados, lo que permitió corregir los sobrecostes que había en la producción</li>
+            <li>Generación de reportes automatizados: Se optimizaron/automatizaron los reportes administrativos, lo que se tradujo en una disminución de HH aumentando la productividad del área</li>
+            <li>Apoyo en funciones de Soporte TI: Se redujo los gastos logísticos de salida de equipos hacia Lima</li>
+        </ul>
+    </div>
+
+    <div class="experience-item">
+        <div class="experience-header">
+            <span class="role-company">Soporte de Aplicaciones</span>
+            <span class="dates">Febrero de 2020 – Abril de 2023</span>
+        </div>
+        <span class="company-info">Yokogawa</span>
+        <div class="experience-summary">
+            Responsable de Soluciones enfocadas en Transformación Digital, desarrollo de Dashboards, implementación de Sistemas, y brindar soporte directo al cliente y capacitando al usuario final.
+        </div>
+        <ul>
+            <li>Proyecto Quellaveco: Digitalización de Formatos Checklists para Precomisionamiento</li>
+            <li>Fenix Power: Capturador de datos de campo de manera digitalizada</li>
+            <li>Minera Southern (SPCC): Sistema de Monitoreo de temperatura en Overland</li>
+            <li>Sistemas IOT para envío de datos hacia plataforma en la Nube - Azure</li> 
+        </ul>
+    </div>
+
+    <div class="section-title">Educación</div>
+
+    <div class="experience-item">
+        <div class="experience-header">
+            <span class="role-company">Universidad Nacional de Ingeniería</span>
+            <span class="dates">2014 - 2019</span>
+        </div>
+        <span class="company-info">Bachiller en Ingeniería Electrónica</span>
+    </div>
+
+    <div class="experience-item">
+        <div class="experience-header">
+            <span class="role-company">Instituto Cultural Peruano Norteamericano (ICPNA)</span>
+            <span class="dates">2016 - 2021</span>
+        </div>
+        <span class="company-info">Nivel de Inglés Avanzado</span>
+    </div>
+
+    <div class="section-title">Habilidades y Otros</div>
+
+    <div class="skills-container">
+        <p><strong>Visualización de Datos / Ingeniería:</strong> Power BI (Avanzado), Python, Excel/VBA, SQL, Lenguaje R.</p>
+        <p><strong>Técnicas:</strong> Automatización de procesos ETL, Análisis de datos, Transformación Digital, Gestión de KPIs.</p>
+        <p><strong>Herramientas y Frameworks:</strong> Microsoft Power Platform (Power Apps, Power Automate), Soporte TI.</p>
+    </div>
+
+</div>
+
+</body>
+</html>
