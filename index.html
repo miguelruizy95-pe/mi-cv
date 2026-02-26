@@ -19,15 +19,15 @@
             background-color: #f0f0f0; 
             display: flex;
             justify-content: center;
-            padding: 20px; /* Espaciado menor para móviles */
+            padding: 20px; 
         }
 
         .resume-container {
             background-color: white;
-            width: 100%; /* Ocupa todo el ancho en móviles */
-            max-width: 210mm; /* No supera el tamaño A4 en escritorio */
+            width: 100%; 
+            max-width: 210mm; 
             min-height: 297mm;
-            padding: 10mm; /* Padding reducido para móviles */
+            padding: 10mm; 
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
 
@@ -37,7 +37,7 @@
 
         h1 {
             color: #4A69BD;
-            font-size: clamp(24px, 6vw, 32px); /* Tamaño fluido según pantalla */
+            font-size: clamp(24px, 6vw, 32px); 
             margin-bottom: 5px;
         }
 
@@ -52,7 +52,7 @@
             color: #555;
             margin-bottom: 15px;
             line-height: 1.5;
-            word-wrap: break-word; /* Evita que el link rompa el diseño en móvil */
+            word-wrap: break-word; 
         }
 
         .summary {
@@ -79,7 +79,7 @@
 
         .experience-header {
             display: flex;
-            flex-wrap: wrap; /* Permite que la fecha baje en móviles */
+            flex-wrap: wrap; 
             justify-content: space-between;
             align-items: baseline;
             gap: 5px;
@@ -141,18 +141,28 @@
             .resume-container { padding: 20mm; }
         }
 
-        /* CONFIGURACIÓN PARA EXPORTAR A PDF (FORZAR A4) */
+        /* CONFIGURACIÓN PARA EXPORTAR A PDF */
         @media print {
             body { background: white; padding: 0; }
             .resume-container {
-                width: 210mm !important; /* Forzamos ancho A4 exacto */
+                width: 210mm !important; 
                 max-width: none;
                 padding: 15mm; 
                 box-shadow: none !important;
+                min-height: auto; /* Permite que fluya a la hoja 2 */
             }
-            .experience-header { flex-wrap: nowrap; } /* Evita saltos de fecha en PDF */
-            @page { size: A4; margin: 0; }
+            .experience-header { flex-wrap: nowrap; } 
+            @page { 
+                size: A4; 
+                margin: 15mm 0; /* Margen para evitar que el texto toque el borde del papel */
+            }
             * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+            /* FUERZA EL SALTO DE PÁGINA ANTES DE EDUCACIÓN */
+            .page-break {
+                margin-top: 40px; /* Espacio extra visual */
+                break-before: page; 
+            }
         }
     </style>
 </head>
@@ -210,7 +220,7 @@
         </ul>
     </div>
 
-    <div class="section-title">Educación</div>
+    <div class="section-title page-break">Educación</div>
 
     <div class="experience-item">
         <div class="experience-header">
